@@ -5,4 +5,3 @@ const projectRoutes = require('./projectRoutes');
 router.use('/users', userRoute);
 router.use('/projects', projectRoutes);
 
-module.exports = router;
