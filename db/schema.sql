@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS budgify_db;
+CREATE DATABASE budgefy_db;
