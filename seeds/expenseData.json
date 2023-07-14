@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Car insurance",
+        "amount":180,
+        "paymentSchedule":"monthly"
+    },
+    {
+        "name":"rent",
+        "amount":1900,
+        "paymentSchedule":"monthly"
+    },
+    {
+        "name":"health insurance",
+        "amount":120,
+        "paymentSchedule":"monthly"
+    },
+    {
+        "name": "Groceries",
+        "amount": 250,
+        "paymentSchedule": "monthly"
+      }
+
+]
