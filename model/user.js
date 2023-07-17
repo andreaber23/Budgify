@@ -25,7 +25,7 @@ User.init(
             allowNull: false,
         },
         income: {
-            type: DataType.FLOAT
+            type: DataTypes.FLOAT
         },
         password: {
             type: DataTypes.STRING,
