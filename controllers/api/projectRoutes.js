@@ -15,7 +15,7 @@ router.post ("/", withAuth, async (req, res) => {
 });
 
 // to update expense
-router.put("/:id", async (req,res) => {
+router.put("/:id", withAuth, async (req,res) => {
     try {
         const updateExpense = await Expense.update(req.body, {
             where:{
