@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- header Section -->
 <header>
     <h1>BUDGIFY</h1> <!-- site name -->
@@ -101,8 +102,97 @@
 </section>
 
 <!-- Footer Section -->
+=======
+<div class="expenses">
+    <h2>Expense Form</h2>
+    <form action="/expenses" method="POST">
+        <!-- Expense input fields -->
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            {{!-- Loops over the category section using the each helper --}}
+            {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Other form fields... -->
+<label for="paymentSchedule">Payment Schedule:</label>
+<select id="paymentSchedule" name="payment_schedule" required>
+    <option value="">Select a payment schedule</option>
+    <option value="annually">Annually</option>
+    <option value="monthly">Monthly</option>
+</select>
+<!-- Other form fields... -->
+
+<div class="budget">
+    <h2>Budget Sections</h2>
+    <ul>
+        {{!-- Loops over the budget section using the each helper --}}
+        {{#each budgetSections}}
+        <li>
+            <span>{{category}}</span>
+            <span>Allocated Budget: {{allocatedBudget}}</span>
+            <span>Spending Status: {{currentSpending}}</span>
+            <button>Edit</button>
+            <button>Delete</button>
+        </li>
+        {{/each}}
+    </ul>
+
+    <a href="/add-section">Add New Section</a>
+</div>
+
+<div class="blog-post">
+    <h2>Latest Blog Post</h2>
+    <h3>{{blogPost.title}}</h3>
+    <p>{{blogPost.content}}</p>
+    <p>By: {{blogPost.author}}</p>
+    <p>{{{get_emoji}}}</p>
+</div>
+
+<div class="comments">
+    <h3>Comments</h3>
+    <ul>
+        {{!-- Loops over each comment section --}}
+        {{#each comments}}
+        <li>
+            <p>{{this}}</p>
+            <!-- Add comment author if available -->
+            <p>{{{get_emoji}}}</p> 
+            <!-- Displays the emoji for the comment -->
+        </li>
+        {{/each}}
+    </ul>
+
+    <form action="/comments" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+        <button type="submit">Submit Comment</button>
+    </form>
+</div>
+
+>>>>>>> f9aa1a530b4cc58b4302b223345967ff85e45162
 <footer>
     <!-- Need a footer content here -->
 </footer>
 </body>
 </html>
+<script src="homepage.js"></script>
