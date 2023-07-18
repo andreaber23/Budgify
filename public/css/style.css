@@ -1,29 +1,60 @@
-.background {
-    background-color: azure;
+body {
+  background: rgb(0,89,49);
+  background: -moz-linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
+  background: linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005931",endColorstr="#49c4b9",GradientType=1);
 }
 
-  .navbar {
-    background-color: black;
-  }
-  
-  .vertical-center {
-    min-height: 100%;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  #log-sign {
-    border-radius: 2em;
-    background: rgba(128, 128, 128 , 0.75);
-    color: white;
-  }
-  
-  .card {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background: rgb(150,135,112);
-    background: linear-gradient(0deg, rgba(150,135,112,0.9948354341736695) 0%, rgba(255,247,243,1) 100%);
-  }
+ h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 65px;
+  color: whitesmoke;
+  padding-top: 150px;
+  padding-bottom: 1px;
+  text-decoration: none;
+ }
+
+ .slogan {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 250px;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  color: black;
+ }
+
+
+.defaultText {
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.questions {
+  display: flex;
+  justify-content: left;
+  font: 17px;
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.comments-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
