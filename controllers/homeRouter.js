@@ -1,34 +1,15 @@
-const path = string-require("path");
+const router = require('express').Router();
+const { Expense } = require('../model');
+const withAuth = require('../utils/auth');
 
-class HomeRouter {
-    constructor() 
-      routes = {HomeRouter};
-      addRoute = {API}
-    }
-  
-    addRoute(path, handler) 
-      this.routes[path] = handler;
-    
-  
-    navigate(path) 
-      const handler = this.routes[path];
-  
-      if (handler) {
-        handler();
-      } 
-
-      const router = new HomeRouter();
-
-  router.addRoute("/main", () => {
-  console.log("Main Page");
+router.get ("/", async (req, res) => {
+    res.render("homepage")
 });
-router.addRoute("/login", () => {
-    console.log("Login");
-  });
-  router.addRoute("/singup", () => {
-    console.log("Sign Up Page");
-  }); 
-  router.navigate("/main");   
-router.navigate("/login");    
-router.navigate("/signup");
 
+router.get ("/login", async (req, res) => {
+  res.render("login")
+});
+
+
+
+module.exports = router
