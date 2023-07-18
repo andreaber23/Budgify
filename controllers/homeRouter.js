@@ -1,18 +1,15 @@
 const router = require('express').Router();
-const { User } = require('../model');
+const { User, Expense } = require('../model');
 const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
   try {
     const categories = ['Income', 'Monthly Expenses', 'Savings/Stocks/Investments', 'Entertainment', 'Travel', 'Shopping', 'Miscellaneous']; // Example data, replace with your actual data
-    const budgetSections = ['', '', '']; // Example data, replace with your actual data
-    const blogPost = {}; // Example data, replace with your actual data
-    const comments = [];
+    const budgetSections =[]
+    
     res.render("homepage", {
       categories,
       budgetSections,
-      blogPost,
-      comments,
     });
   } catch (error) {
     console.error(error);
@@ -25,7 +22,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Expense}],
     });
 
     const user = userData.get({ plain: true });
