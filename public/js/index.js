@@ -1,16 +1,16 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document.getElementById("loginForm").addEventListener ("submit"), function(event) {
     event.preventDefault(); 
   
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value; 
 }
     if (username === "admin" && password === "password") {
-
-    } else {
+    }
+        else {
         
         document.getElementById("loginMessage").textContent = "Incorrect username or password.";
       }
-      if  (ForgotPassword) {
+      if  (ForgotPassword) 
     
          ("forgot-password")
          ResponseEntity<String> processForgotPassword(RequestParam("email") String email) {
