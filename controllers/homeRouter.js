@@ -31,7 +31,7 @@ router.post('/expenses', async (req, res) => {
 
     // Validate the form data
     if (!category || !amount || !date || !description || !paymentSchedule) {
-      return res.status(400).json({ message: 'All fields are required' });
+      return res.status(400).json({ message: 'All fields are required'});
     }
 
     // Create a new Expense instance with the form data
