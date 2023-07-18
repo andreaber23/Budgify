@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-  
-    const name = document.querySelector('#project-name').value.trim();
-    const needed_funding = document.querySelector('#project-funding').value.trim();
-    const description = document.querySelector('#project-desc').value.trim();
-  
-    if (name && needed_funding && description) {
-      const response = await fetch(`/api/projects`, {
+
+    const editButton = document.getElementById('update-button');
+    const name = document.querySelector('#name').value.trim();
+    const description = document.querySelector('#category-desc').value.trim();
+    const categorySelect = document.querySelector('#category');
+
+    if (name && paymentSchedule && description && amount) {
+      const response = await fetch(`/expenses`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ name, paymentSchedule, description, amount }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -17,7 +18,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create project');
+        alert('Failed to submit expense');
       }
     }
   };
@@ -33,7 +34,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete expense');
       }
     }
   };
