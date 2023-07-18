@@ -12,7 +12,7 @@ router.post("/login", async (req, res) => {
        });
     }
 
-        const correctPassword = await userData.checkpassword(req.body.password);
+        const correctPassword = await userData.checkPassword(req.body.password);
     if (!correctPassword) {
         return res.status(400).json ({
         message: "Email or password is incorrect, please try again"
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
 if (req.session.logged_in) {
     req.session.destroy(()=> {
-        res.status(205).end();
+        res.status(200).end();
     });
 } else {
     res.status(404).end();
