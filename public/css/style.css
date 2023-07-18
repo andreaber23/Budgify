@@ -28,7 +28,7 @@ body {
  }
 
 
-.expense {
+.defaultText {
   display: flex;
   justify-content: center;
   font-family: 'Lato', sans-serif;
@@ -54,3 +54,8 @@ body {
   padding-bottom: 50px;
 }
 
+.login-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}

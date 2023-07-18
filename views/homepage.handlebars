@@ -6,7 +6,7 @@
 
 <!-- expenses section -->
 <div class="expenses">
-    <h2 class="expense">Expense Form</h2> <!-- expense form title -->
+    <h2 class="defaultText">Expense Form</h2> <!-- expense form title -->
     <h4 class="questions">What budget duration would you prefer? Please choose from the following options.</h4> <!-- Question about budget duration -->
     <div class="form-floating">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -37,7 +37,7 @@
 
 <!-- budget section -->
 <div class="budget">
-    <h2 class="expense">Budget Sections</h2> <!-- title for budget section -->
+    <h2 class="defaultText">Budget Sections</h2> <!-- title for budget section -->
     <ul>
         {{!-- Loops over each budget section --}}
         {{#each budgetSections}} <!-- Handlebars loop to display budget sections -->
@@ -59,7 +59,7 @@
 
 <!-- Blog Post Section -->
 <div class="blog-post">
-    <h2 class="expense">Latest Blog Post</h2> 
+    <h2 class="defaultText">Latest Blog Post</h2> 
     <h3>{{blogPost.title}}</h3> 
     <p>{{blogPost.content}}</p> 
     <p>{{blogPost.author}}</p> 
@@ -68,7 +68,7 @@
 
 <!-- Comments Section -->
 <section class="comments">
-    <h3 class="expense">Comments</h3> <!-- Title for comments section -->
+    <h3 class="defaultText">Comments</h3> <!-- Title for comments section -->
     <ul>
         {{!-- Loops over each comment section --}}
         {{#each comments}} 
