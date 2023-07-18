@@ -26,7 +26,7 @@ router.post("/login", async (req, res) => {
             
             res.json({
                 user: userData,
-                message: "Log in suscessful!"
+                message: "Log in successful"
             })
         })
     } catch (err) {
