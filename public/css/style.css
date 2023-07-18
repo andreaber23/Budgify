@@ -1,0 +1,29 @@
+.background {
+    background-color: azure;
+}
+
+  .navbar {
+    background-color: black;
+  }
+  
+  .vertical-center {
+    min-height: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  #log-sign {
+    border-radius: 2em;
+    background: rgba(128, 128, 128 , 0.75);
+    color: white;
+  }
+  
+  .card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgb(150,135,112);
+    background: linear-gradient(0deg, rgba(150,135,112,0.9948354341736695) 0%, rgba(255,247,243,1) 100%);
+  }
