@@ -13,18 +13,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="/">Home Page</a>
-    </li>
-    {{#if logged_in}}
-      <!-- Show these links only for logged in users -->
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">Profile</a>
-      </li>
-      <li class="nav-item">
-=======
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
@@ -35,7 +23,6 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">Profile</a> |
->>>>>>> f9aa1a530b4cc58b4302b223345967ff85e45162
         <button class="no-button" id="logout">Logout</button>
       </li>
     {{else}}
