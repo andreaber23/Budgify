@@ -17,7 +17,7 @@ router.post ("/", withAuth, async (req, res) => {
 // to update expense
 router.put("/:id", async (req,res) => {
     try {
-        const updateExpense = await Comment.update(req.body, {
+        const updateExpense = await Expense.update(req.body, {
             where:{
                 id: req.params.id
             },

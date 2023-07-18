@@ -10,7 +10,7 @@ Expense.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { User, Expense };
+module.exports = { User, Expense,};
 
 let templates = {};
 let routes = {};
