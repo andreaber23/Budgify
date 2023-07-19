@@ -1,92 +1,133 @@
-<div class="expenses">
-    <h2>Expense Form</h2>
-    <form action="/expenses" method="POST">
-        <!-- Expense input fields -->
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <option value="">Select a category</option>
-            {{!-- Loops over the category section using the each helper --}}
-            {{#each categories}}
-            <option value="{{this}}">{{this}}</option>
+<!-- Other form fields... -->
+<div class="container-wrapper">
+    <div class="container">
+        <!-- Content here -->
+
+
+        <div class="expenses">
+            <h2 class="defaultText">Expense Form</h2>
+            <form action="/expenses" method="POST">
+                <!-- Expense input fields -->
+                <div class="center">
+                    <label class="questions" for="paymentSchedule">Payment Schedule</label>
+                </div>
+                <div class="center"><select id="paymentSchedule" name="payment_schedule" required>
+                        <option value="">Select a payment schedule</option>
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <div class="center">
+                    <label class="questions" for="category">Category:</label>
+                </div>
+                <div class="center">
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        {{!-- Loops over the category section using the each helper --}}
+                        {{#each categories}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="center">
+                    <label class="questions" for="amount">Amount:</label>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+                <div class="center">
+                    <label class="questions" for="date">Date:</label>
+                </div>
+                <div class="center">
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="center">
+                    <label class="questions" for="description">Description:</label>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Type:</span>
+                    <textarea class="form-control" aria-label="Type:"></textarea>
+                </div>
+                <div class="center">
+                    <button type="button" class="btn btn-outline-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Other form fields... -->
+    <div class="container">
+        <div class="budget">
+            <h2 class="defaultText">Budget Sections</h2>
+            <ul>
+                {{!-- Loops over the budget section using the each helper --}}
+                {{#each budgetSections}}
+                <li>
+                    <span>{{category}}</span>
+                    <span>Allocated Budget: {{allocatedBudget}}</span>
+                    <span>Spending Status: {{currentSpending}}</span>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </li>
+                {{/each}}
+            </ul>
+            <div class="center"> <a href="/add-section">
+                <button type="button" class="btn btn-outline-secondary">Add New Section</button>
+            </a>
+            </div>
+
+        </div>
+
+        <div class="blog-post">
+            <h2 class="defaultText">Latest Blog Post</h2>
+            <h3>{{blogPost.title}}</h3>
+            <p>{{blogPost.content}}</p>
+            <p>{{blogPost.author}}</p>
+            <p>{{{get_emoji}}}</p>
+        </div>
+
+        <div class="center">
+            <h3 class="defaultText">Comments</h3>
+        </div>
+        <ul>
+            {{!-- Loops over each comment section --}}
+            {{#each comments}}
+            <li>
+                <p>{{this}}</p>
+                <!-- Add comment author if available -->
+                <p>{{{get_emoji}}}</p>
+                <!-- Displays the emoji for the comment -->
+            </li>
             {{/each}}
-        </select>
-
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" step="0.01" required>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
+        </ul>
+        <div class="center">
+            <form action="/comments" method="POST">
+                <label for="name">Name:</label>
+                <input id="name" name="name" type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="center">
+            <label for="comment">Comment:</label>
+            <div id="comment" name="comment" rows="4" class="input-group">
+                <span class="input-group-text">Type:</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+        <div class="center">
+            <button type="button" class="btn btn-outline-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 
-<!-- Other form fields... -->
-<label for="paymentSchedule">Payment Schedule:</label>
-<select id="paymentSchedule" name="payment_schedule" required>
-    <option value="">Select a payment schedule</option>
-    <option value="annually">Annually</option>
-    <option value="monthly">Monthly</option>
-</select>
-<!-- Other form fields... -->
 
-<div class="budget">
-    <h2>Budget Sections</h2>
-    <ul>
-        {{!-- Loops over the budget section using the each helper --}}
-        {{#each budgetSections}}
-        <li>
-            <span>{{category}}</span>
-            <span>Allocated Budget: {{allocatedBudget}}</span>
-            <span>Spending Status: {{currentSpending}}</span>
-            <button>Edit</button>
-            <button>Delete</button>
-        </li>
-        {{/each}}
-    </ul>
-
-    <a href="/add-section">Add New Section</a>
-</div>
-
-<div class="blog-post">
-    <h2>Latest Blog Post</h2>
-    <h3>{{blogPost.title}}</h3>
-    <p>{{blogPost.content}}</p>
-    <p>By: {{blogPost.author}}</p>
-    <p>{{{get_emoji}}}</p>
-</div>
-
-<div class="comments">
-    <h3>Comments</h3>
-    <ul>
-        {{!-- Loops over each comment section --}}
-        {{#each comments}}
-        <li>
-            <p>{{this}}</p>
-            <!-- Add comment author if available -->
-            <p>{{{get_emoji}}}</p> 
-            <!-- Displays the emoji for the comment -->
-        </li>
-        {{/each}}
-    </ul>
-
-    <form action="/comments" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="comment">Comment:</label>
-        <textarea id="comment" name="comment" rows="4" required></textarea>
-
-        <button type="submit">Submit Comment</button>
-    </form>
-</div>
-
-<footer>
-    <!-- Need a footer content here -->
-</footer>
 </body>
+
 </html>
 <script src="profile.js"></script>
