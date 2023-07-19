@@ -1,70 +1,71 @@
+<!-- Other form fields... -->
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome! <!--{{name}}!--></h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Expense:</h3>
+<div class="container-wrapper">
+    <div class="container">
 
-    <form class="form new-expense-form" action="/expenses" method="POST">
-      <div class="form-group">
-        <label for="expense-category">Expense questions:</label>
-        <select id="expense-category" name="expense-category">
-          <option value="">Select a question</option>
+        <!-- Content here -->
+        <div class="expenses">
+            <h2 class="defaultText">Expense Form</h2>
+           <form class="form new-expense-form" action="../controllers/api/expensesRoutes.js" method="POST">
+                <!-- Expense input fields -->
+                <div class="center">
+                    <label class="questions" for="expense-category">Questions:</label>
+                </div>
+                <div class="center">
+                    <select id="expense-category" name="expense-category" required>
+                        <option value="">Select a question</option>
 
-          <option value="">What is your expense on housing?</option>
-          <option value="">What is your expense on transportation?</option>
-          <option value="">How much do you spend on utilities?</option>
-          <option value="">How much do you spend on groceries?</option>
-          <option value="">How much do you spend on miscellaneous?</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="expense-amount">Amount:</label>
-        <input class="form-input" type="number" id="expense-amount" name="expense-amount" step="0.01" />
-      </div>
-      <div class="form-group">
-        <label for="expense-date">Date:</label>
-        <input class="form-input" type="date" id="expense-date" name="expense-date" />
-      </div>
-      <div class="form-group">
-        <label for="expense-description">Description:</label>
-        <textarea class="form-input" id="expense-description" name="expense-description" rows="4"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="expense-paymentSchedule">Payment Schedule:</label>
-        <select id="expense-paymentSchedule" name="expense-paymentSchedule">
-          <option value="">Select a payment schedule</option>
-          <option value="annually">Annually</option>
-          <option value="monthly">Monthly</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if expenses.length}}
-  <div class="col-md-6 expense-list">
-    <h3>Current Expenses:</h3>
-
-    {{#each expenses}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/expense/{{id}}">{{category}} - ${{amount}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
-        <button class="btn btn-sm btn-primary update-btn" id="update-button"
-        data-id="{{id}}">UPDATE</button>
-      </div>
+                        <option value="">What is your expense on housing?</option>
+                        <option value="">What is your expense on transportation?</option>
+                        <option value="">How much do you spend on utilities?</option>
+                        <option value="">How much do you spend on groceries?</option>
+                        <option value="">How much do you spend on miscellaneous?</option>
+                    </select>
+                </div>
+                <div class="center">
+                    <label class="questions" for="expense-paymentSchedule">Payment Schedule:</label>
+                </div>
+                <div class="center"><select id="expense-paymentSchedule" name="expense-paymentSchedule" required>
+                        <option value="">Select a payment schedule</option>
+                        <option value="annually">Annually</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <div class="center">
+                    <label class="questions" for="expense-amount">Amount:</label>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control"
+                        aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+                <div class="center">
+                    <label class="questions" for="expense-date">Date:</label>
+                </div>
+                <div class="center">
+                    <input type="date" id="expense-date" name="expense-date" required>
+                </div>
+                <div class="center">
+                    <label class="questions" for="expense-description">Description:</label>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Type:</span>
+                    <textarea class="form-control" aria-label="Type:"></textarea>
+                </div>
+                <div class="center">
+                    <button type="button" class="btn btn-outline-success">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
+    <!-- Other form fields... -->
 </div>
-
-<script src="./js/profile.js"></script>
+</div>
+</body>
+</html>
+<script src="../public/js/profile.js"></script>
