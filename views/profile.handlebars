@@ -63,22 +63,22 @@
             </form>
         </div>
     </div>
-
+    {{#if expense.length}}
     <div class="container">
         <div class="budget">
-            <h2 class="defaultText">Budget Sections</h2>
-            <ul>
-                {{!-- Loops over the budget section using the each helper --}}
-                {{#each budgetSections}}
-                <li>
-                    <span>{{category}}</span>
-                    <span>Allocated Budget: {{allocatedBudget}}</span>
-                    <span>Spending Status: {{currentSpending}}</span>
-                    <button>Delete</button>
-                </li>
-                {{/each}}
-            </ul>
-           
+            <h2 class="defaultText">Expense Section</h2>
+            {{#each expenses as |expense|}}
+           <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{expense.id}}">{{expense.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{expense.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
     <!-- Other form fields... -->
 </div>
 </div>
