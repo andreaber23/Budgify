@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     const categories = ['Income', 'Monthly Expenses', 'Savings/Stocks/Investments', 'Entertainment', 'Travel', 'Shopping', 'Miscellaneous']; // Example data, replace with your actual data
     
     
-    res.render("homepage", {
+    res.render("profile", {
       categories,
       
     });
