@@ -5,7 +5,7 @@ const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const expenseRoutes = require('./routes/api/expenses');
+const expenseRoutes = require('./controllers/api/expensesRoutes');
 
 
 const app = express();
