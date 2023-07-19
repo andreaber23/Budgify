@@ -8,14 +8,17 @@
   <div class="col-md-6">
     <h3>Create a New Expense:</h3>
 
-    <form class="form new-expense-form">
+    <form class="form new-expense-form" action="/expenses" method="POST">
       <div class="form-group">
-        <label for="expense-category">Category:</label>
+        <label for="expense-category">Expense questions:</label>
         <select id="expense-category" name="expense-category">
-          <option value="">Select a category</option>
-          {{#each categories}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
+          <option value="">Select a question</option>
+
+          <option value="">What is your expense on housing?</option>
+          <option value="">What is your expense on transportation?</option>
+          <option value="">How much do you spend on utilities?</option>
+          <option value="">How much do you spend on groceries?</option>
+          <option value="">How much do you spend on miscellaneous?</option>
         </select>
       </div>
       <div class="form-group">
