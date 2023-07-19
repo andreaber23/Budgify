@@ -3,8 +3,9 @@ const { Expense } = require('../../model')
 const withAuth = require('../../utils/auth');
 
 
-router.post ("/expenses", withAuth, async (req, res) => {
+router.post ("/", withAuth, async (req, res) => {
     try {
+        console.log(req.body)
         const newExpense = await Expense.create({
             ...req.body,
             user_id: req.session.user_id,

@@ -1,15 +1,15 @@
+const amount = document.querySelector('#expense-amount')
+const description = document.querySelector('#expense-description')
+const paymentSchedule = document.querySelector('#expense-paymentSchedule');
+const expenseForm =  document.querySelector('.new-expense-form');
+
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const amount = document.querySelector('#expense-amount').value.trim();
-    const description = document.querySelector('#expense-description').value.trim();
-    const categorySelect = document.querySelector('#expense-category');
-    const paymentSchedule = document.querySelector('#expense-paymentSchedule');
-
-    if (categorySelect && paymentSchedule && description && amount) {
-      const response = await fetch(`/expenses`, {
+    if (paymentSchedule && description && amount) {
+      const response = await fetch(`/api/expenses`, {
         method: 'POST',
-        body: JSON.stringify({ categorySelect, paymentSchedule, description, amount }),
+        body: JSON.stringify({paymentSchedule: paymentSchedule.value, amount: amount.value }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -17,10 +17,12 @@ const newFormHandler = async (event) => {
   
       if (response.ok) {
         document.location.replace('/profile');
+        return response;
       } else {
         alert('Failed to submit expense');
       }
     }
+
   };
   
   const delButtonHandler = async (event) => {
@@ -54,16 +56,12 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  document
-    .querySelector('.new-expense-form')
-    .addEventListener('submit', newFormHandler);
+ 
+expenseForm.addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('.expense-list')
-    .addEventListener('click', delButtonHandler);
-    document
-    .querySelector('.expense-list')
-    .addEventListener('click', updateButtonHandler);
+  // document
+  //   .querySelector('.expense-list')
+  //   .addEventListener('click', delButtonHandler);
+  
 
-  document.querySelector('.new-expense-form').setAttribute('data-questions', JSON.stringify(questions));
-  
+    
