@@ -4,11 +4,25 @@ const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
   try {
-    const categories = ['Income', 'Monthly Expenses', 'Savings/Stocks/Investments', 'Entertainment', 'Travel', 'Shopping', 'Miscellaneous']; // Example data, replace with your actual data
+
+
+    // Get all projects and JOIN with user data
+    const expenseData = await Expense.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['first_name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const expenses = expenseData.map((expense) => expense.get({ plain: true }));
+
     
     
     res.render("profile", {
-      categories,
+      expenses,
       
     });
   } catch (error) {

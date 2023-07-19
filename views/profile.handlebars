@@ -11,7 +11,7 @@
         <!-- Content here -->
         <div class="expenses">
             <h2 class="defaultText">Expense Form</h2>
-           <form class="form new-expense-form" action="../controllers/api/expensesRoutes.js" method="POST">
+           <form class="form new-expense-form">
                 <!-- Expense input fields -->
                 <div class="center">
                     <label class="questions" for="expense-category">Questions:</label>
@@ -58,13 +58,13 @@
                     <textarea class="form-control" aria-label="Type:"></textarea>
                 </div>
                 <div class="center">
-                    <button type="button" class="btn btn-outline-success">Submit</button>
+                    <button id="submit" type="submit" class="btn btn-outline-success">Submit</button>
                 </div>
             </form>
         </div>
     </div>
-    {{#if expense.length}}
-    <div class="container">
+   <!-- {{#if expense.length}}
+    <div class="col-md-6 expense-list ">
         <div class="budget">
             <h2 class="defaultText">Expense Section</h2>
             {{#each expenses as |expense|}}
@@ -78,10 +78,10 @@
     </div>
     {{/each}}
   </div>
-  {{/if}}
+  {{/if}} -->
     <!-- Other form fields... -->
 </div>
 </div>
 </body>
 </html>
-<script src="../public/js/profile.js"></script>
+<script src="./js/profile.js"></script>
