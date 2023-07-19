@@ -63,6 +63,22 @@
             </form>
         </div>
     </div>
+
+    <div class="container">
+        <div class="budget">
+            <h2 class="defaultText">Budget Sections</h2>
+            <ul>
+                {{!-- Loops over the budget section using the each helper --}}
+                {{#each budgetSections}}
+                <li>
+                    <span>{{category}}</span>
+                    <span>Allocated Budget: {{allocatedBudget}}</span>
+                    <span>Spending Status: {{currentSpending}}</span>
+                    <button>Delete</button>
+                </li>
+                {{/each}}
+            </ul>
+           
     <!-- Other form fields... -->
 </div>
 </div>
