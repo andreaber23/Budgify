@@ -1,7 +1,7 @@
 # Budgify
 
 ## Description
-Build a back-end for a e-commerce website that wants to use the latest technologies.
+Build a back-end for a e-commerce website that wants to use the latest technologies. Estimate your financial records and keep track of your expenses. all of your financial will be measured and results will be shown back to you. 
 
 ## Table of contents
 - [Installation](#installation)
@@ -18,6 +18,8 @@ For this application to run how it is supposed to, user needs to install the fol
 - Install MySQL2 package to connect the database from MySQL and be able to perform the quieres. Type in the integrated terminal "npm install --save mysql2". (https://www.npmjs.com/package/mysql2)
 - Install Sequelize package (https://www.npmjs.com/package/sequelize)
 - Install Dotenv package. It stores sensitive data, like a user’s MySQL username, password, and database name (https://www.npmjs.com/package/dotenv)
+- Install MAMP to  launch the MYSQL2 and the server
+- Type npm start in integrated terminal to launch the server.
 
 ## Usage
 After installing all the packages, open mysql to create the database. Type the following:
@@ -48,13 +50,17 @@ GET a category by ID
 <img width="1392" alt="Screenshot 2023-07-09 at 10 43 10 AM" src="https://github.com/andreaber23/prework-study-guide/assets/128647787/859d3ebc-ccd1-44f7-977c-24445e13f6d7">
 
 ## License
-n/a
+MIT license
+Apache license 2.0
 
 ## Contributing
 @andreaber23
-
+@lexmachado
+@
+@
+@
 ## Tests
-0
+20
 
 ## Questions
 If you have any questions reach out to me at andreaber23@hotmail.com.
