@@ -5,11 +5,11 @@ const withAuth = require('../utils/auth');
 router.get("/", async (req, res) => {
   try {
     const categories = ['Income', 'Monthly Expenses', 'Savings/Stocks/Investments', 'Entertainment', 'Travel', 'Shopping', 'Miscellaneous']; // Example data, replace with your actual data
-    const budgetSections =[]
+    
     
     res.render("homepage", {
       categories,
-      budgetSections,
+      
     });
   } catch (error) {
     console.error(error);
