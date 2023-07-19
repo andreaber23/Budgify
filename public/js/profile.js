@@ -61,4 +61,6 @@ const newFormHandler = async (event) => {
   document
     .querySelector('.expense-list')
     .addEventListener('click', delButtonHandler);
+
+  document.querySelector('.new-expense-form').setAttribute('data-questions', JSON.stringify(questions));
   
