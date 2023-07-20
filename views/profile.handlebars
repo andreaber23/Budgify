@@ -1,67 +1,85 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Expense:</h3>
-
-    <form class="form new-expense-form">
-      <div class="form-group">
-        <label for="expense-category">Category:</label>
-        <select id="expense-category" name="expense-category">
-          <option value="">Select a category</option>
-          {{#each categories}}
-            <option value="{{this}}">{{this}}</option>
-          {{/each}}
-        </select>
+<!-- welcome & profile container -->
+<div class="container-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto">
+        <h2 class="defaultText">Welcome, {{name}}!</h2>
+        <h2 class="defaultText">Create a New Expense:</h2>
       </div>
-      <div class="form-group">
-        <label for="expense-amount">Amount:</label>
-        <input class="form-input" type="number" id="expense-amount" name="expense-amount" step="0.01" />
-      </div>
-      <div class="form-group">
-        <label for="expense-date">Date:</label>
-        <input class="form-input" type="date" id="expense-date" name="expense-date" />
-      </div>
-      <div class="form-group">
-        <label for="expense-description">Description:</label>
-        <textarea class="form-input" id="expense-description" name="expense-description" rows="4"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="expense-paymentSchedule">Payment Schedule:</label>
-        <select id="expense-paymentSchedule" name="expense-paymentSchedule">
-          <option value="">Select a payment schedule</option>
-          <option value="annually">Annually</option>
-          <option value="monthly">Monthly</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if expenses.length}}
-  <div class="col-md-6 expense-list">
-    <h3>Current Expenses:</h3>
-
-    {{#each expenses}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/expense/{{id}}">{{category}} - ${{amount}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
-        <button class="btn btn-sm btn-primary update-btn" id="update-button"
-        data-id="{{id}}">UPDATE</button>
+        </div>
+        <form class="form new-expense-form">
+          <div class="center">
+            <div class="form-group">
+              <label for="expense-category">Category:</label>
+            </div>
+            <select id="expense-category" name="expense-category" class="questions">
+              <option value="">Select a category</option>
+              {{#each categories}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="center">
+            <div class="form-group">
+              <label for="expense-amount">Amount:</label>
+            </div>
+            <input class="form-input" type="number" id="expense-amount" name="expense-amount" step="0.01" />
+          </div>
+          <div class="center">
+            <div class="form-group">
+              <label for="expense-date">Date:</label>
+            </div>
+            <input class="form-input" type="date" id="expense-date" name="expense-date" />
+          </div>
+          <div class="center">
+            <div class="form-group">
+              <label for="expense-description">Description:</label>
+            </div>
+            <textarea class="form-input" id="expense-description" name="expense-description" rows="4"></textarea>
+          </div>
+          <div class="center">
+            <div class="form-group">
+              <label for="expense-paymentSchedule">Payment Schedule:</label>
+              <select id="expense-paymentSchedule" name="expense-paymentSchedule">
+                <option value="">Select a payment schedule</option>
+                <option value="annually">Annually</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div class="center">
+            <button type="submit" class="btn btn-outline-success">Create</button>
+            <div class="form-group">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    {{/each}}
   </div>
-  {{/if}}
+
+  <!-- container populates when expense is added -->
+  {{#if expenses.length}}
+  <div class="container-wrapper">
+    <div class="container">
+      <div class="col-md-6 expense-list">
+        <h3 class="defaultText">Current Expenses:</h3>
+        {{#each expenses}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/expense/{{id}}">{{category}} - ${{amount}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-outline-danger" data-id="{{id}}">DELETE</button>
+
+            <button type="button" class="btn btn-outline-primary" id="update-button" data-id="{{id}}">UPDATE</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
 </div>
 
+<!-- profile script js added -->
 <script src="./js/profile.js"></script>

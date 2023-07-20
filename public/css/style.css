@@ -1,14 +1,18 @@
+/* background for all of site */
+
 body {
-  background: rgb(0,89,49);
-  background: -moz-linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
-  background: linear-gradient(0deg, rgba(0,89,49,1) 0%, rgba(2,122,52,1) 43%, rgba(73,196,185,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005931",endColorstr="#49c4b9",GradientType=1);
+  background: rgb(0, 89, 49);
+  background: -moz-linear-gradient(0deg, rgba(0, 89, 49, 1) 0%, rgba(2, 122, 52, 1) 43%, rgba(73, 196, 185, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 89, 49, 1) 0%, rgba(2, 122, 52, 1) 43%, rgba(73, 196, 185, 1) 100%);
+  background: linear-gradient(0deg, rgba(0, 89, 49, 1) 0%, rgba(2, 122, 52, 1) 43%, rgba(73, 196, 185, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005931", endColorstr="#49c4b9", GradientType=1);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
- h1 {
+/* for budgify name on main */ 
+
+h1 {
   display: flex;
   justify-content: center;
   font-family: 'Lato', sans-serif;
@@ -17,17 +21,20 @@ body {
   padding-top: 10px;
   padding-bottom: 0px;
   text-decoration: none;
- }
+}
 
- .slogan {
+/* for slogan name on main */
+
+.slogan {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   color: black;
- }
+}
 
+/* text for all heading */
 
 .defaultText {
   display: flex;
@@ -37,17 +44,23 @@ body {
   font-size: 30px;
 }
 
+/* text for questions */
+
 .questions {
   display: flex;
   justify-content: left;
   font: 17px;
 }
 
+/* background for all of site */
+
 .login-section {
   display: flex;
   justify-content: center;
   padding: 50px;
 }
+
+/* footer styling */
 
 footer {
   position: fixed;
@@ -63,9 +76,11 @@ footer {
   color: whitesmoke;
 }
 
+/* containers for profile page */
+
 .container-wrapper {
   display: flex;
-  flex-direction: column; /* Stack containers vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
@@ -79,18 +94,18 @@ footer {
   margin: 10px 0;
   border-radius: 25px;
   display: flex;
-  flex-direction: column; /* Stack items inside each container vertically */
-  justify-content: center; /* Center items inside each container vertically */
-  align-items: center; /* Center items inside each container horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Additional CSS rule to center the "Submit" button in the comment section */
 .container .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+ /* basic centering styling */
 
 .center {
   display: flex;
@@ -98,3 +113,25 @@ footer {
   padding-bottom: 10px;
   padding-top: 5px;
 }
+
+/* login & signup containers */
+
+.loginContainer-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+}
+
+.loginContainer {
+  background-color: rgb(206, 243, 219);
+  height: 450px;
+  width: 400px;
+  margin: 10px 0;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
