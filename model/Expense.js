@@ -12,7 +12,7 @@ Expense.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -20,14 +20,15 @@ Expense.init(
             type: DataTypes.FLOAT,
             allowNull: false
         },
+
         paymentSchedule: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 paymentScheduleValidator(value) {
                     i = value.toLowerCase();
-                    if (!(i === 'anually') && !(i === 'monthly')) {
-                        throw new Error(`Must be either "anually" or "monthly"`);
+                    if (!(i === 'annually') && !(i === 'monthly')) {
+                        throw new Error(`Must be either "annually" or "monthly"`);
                     }
                 }
             }

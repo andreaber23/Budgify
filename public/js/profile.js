@@ -1,15 +1,17 @@
-const amount = document.querySelector('#expense-amount')
-const description = document.querySelector('#expense-description')
-const paymentSchedule = document.querySelector('#expense-paymentSchedule');
 const expenseForm =  document.querySelector('.new-expense-form');
 
 const newFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
+  
+  const amount = document.querySelector('.expense-amount');
+  const description = document.querySelector('#expense-description');
+  const paymentSchedule = document.querySelector('#expense-paymentSchedule');
+  
 
-    if (paymentSchedule && description && amount) {
+
       const response = await fetch(`/api/expenses`, {
         method: 'POST',
-        body: JSON.stringify({paymentSchedule: paymentSchedule.value, amount: amount.value }),
+        body: JSON.stringify({paymentSchedule: paymentSchedule.value, amount: amount.value, description: description.value,}),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -22,8 +24,7 @@ const newFormHandler = async (event) => {
         alert('Failed to submit expense');
       }
     }
-
-  };
+  ;
   
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
