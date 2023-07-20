@@ -1,17 +1,14 @@
-<!-- Other form fields... -->
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome! <!--{{name}}!--></h2>
-  </div>
-</div>
-
+<!-- welcome message & container -->
 <div class="container-wrapper">
     <div class="container">
-
-        <!-- Content here -->
+        <div class="row">
+            <div class="col-auto">
+                <h2 class="defaultText">Welcome! <!--{{name}}!--></h2>
+            </div>
+        </div>
         <div class="expenses">
             <h2 class="defaultText">Expense Form</h2>
-           <form class="form new-expense-form">
+            <form class="form new-expense-form">
                 <!-- Expense input fields -->
                 <div class="center">
                     <label class="questions" for="expense-category">Questions:</label>
@@ -42,7 +39,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control expense-amount"
-                        aria-label="Dollar amount (with dot and two decimal places)"/>
+                        aria-label="Dollar amount (with dot and two decimal places)" />
                 </div>
                 <div class="center">
                     <label class="questions" for="expense-description">Description:</label>
@@ -57,26 +54,28 @@
             </form>
         </div>
     </div>
-
-   <h1>rendering!!!!</h1>
-    <div class="col-md-6 expense-list ">
-        <div class="budget">
-            <h2 class="defaultText">Expense Section</h2>
-            {{#each expenses as |expense|}}
-           <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{expense.description}}</h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{expense.id}}">DELETE</button>
-      </div>
+    <div class="expenseContainer-wrapper">
+        <div class="expenseContainer">
+            <h1 class="defaultText">Rendering</h1>
+            <div class="col-md-6 expense-list ">
+                <div class="budget">
+                    <h2 class="defaultText">Expense Section</h2>
+                    {{#each expenses as |expense|}}
+                    <div class="withinContainer">
+                        <div class="left">
+                        <h4>{{expense.description}}</h4>
+                        </div>
+                        <div class="right">
+                            <button class="btn btn-outline-danger" data-id="{{expense.id}}">DELETE</button>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     </div>
-    {{/each}}
-  </div>
-
-    <!-- Other form fields... -->
-</div>
 </div>
 </body>
+
 </html>
 <script src="./js/profile.js"></script>
