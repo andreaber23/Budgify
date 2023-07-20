@@ -64,8 +64,8 @@ const updateButtonHandler = async (event) => {
 
 expenseForm.addEventListener('submit', newFormHandler);
 
-  // document
-  //   .querySelector('.expense-list')
-  //   .addEventListener('click', delButtonHandler);
+  document
+    .querySelector('.expense-list')
+    .addEventListener('click', delButtonHandler);
 
 
