@@ -98,3 +98,8 @@ footer {
   padding-bottom: 10px;
   padding-top: 5px;
 }
+.button:hover {
+  background-color: darkgreen;
+  transition: 0.3s;
+  cursor: crosshair;
+}
