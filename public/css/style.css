@@ -169,3 +169,26 @@ footer {
   display: flex;
   align-items: center;
 }
+/* Responsive styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .loginContainer,
+  .loginContainer-wrapper,
+  .signupContainer,
+  .signupContainer-wrapper {
+    flex-direction: column;
+  }
+  
+}
+
+/* Responsive styles for even smaller screens */
+@media only screen and (max-width: 576px) {
+  .loginContainer,
+  .loginContainer-wrapper,
+  .signupContainer,
+  .signupContainer-wrapper {
+    flex-direction: column;
+  }
+  
+}
+  
+
