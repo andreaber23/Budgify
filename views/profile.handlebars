@@ -14,6 +14,7 @@
                     <label class="questions" for="expense-category">Questions:</label>
                 </div>
                 <div class="center">
+                    {{!-- Category section with a drop down menu --}}
                     <select id="expense-category" name="expense-category" required>
                         <option value="">Select a question</option>
 
@@ -24,6 +25,7 @@
                         <option value="">How much do you spend on miscellaneous?</option>
                     </select>
                 </div>
+                {{!-- A section for the payment schedule with a drop down menu options --}}
                 <div class="center">
                     <label class="questions" for="expense-paymentSchedule">Payment Schedule:</label>
                 </div>
@@ -36,6 +38,7 @@
                 <div class="center">
                     <label class="questions" for="expense-amount">Amount:</label>
                 </div>
+                {{!-- A section that allow the users to input the amount --}}
                 <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control expense-amount"
@@ -44,6 +47,7 @@
                 <div class="center">
                     <label class="questions" for="expense-description">Description:</label>
                 </div>
+                {{!-- A section that allows the user to input a description --}}
                 <div class="input-group">
                     <span class="input-group-text">Type:</span>
                     <textarea id="expense-description" class="form-control" aria-label="Type:"></textarea>
@@ -54,6 +58,7 @@
             </form>
         </div>
     </div>
+    {{!-- A section that will render the input from the user --}}
     <div class="expenseContainer-wrapper">
         <div class="expenseContainer">
             <h1 class="defaultText">Rendering</h1>
